@@ -1,0 +1,27 @@
+{
+  "name": "@ajayos/keerthana-base",
+  "version": "1.0.1",
+  "description": "keerthana base code",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keerthana-bot/Base.git"
+  },
+  "keywords": [
+    "keerthana",
+    "ajay",
+    "base",
+    "bot",
+    "whatsapp",
+    "ai"
+  ],
+  "author": "Ajay o s",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/keerthana-bot/Base/issues"
+  },
+  "homepage": "https://github.com/keerthana-bot/Base#readme"
+}
