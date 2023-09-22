@@ -1,0 +1,23 @@
+@echo off
+REM Set text color to green (Light Green on Black background)
+color 0A
+
+REM Set download folder
+set download_folder=%userprofile%\Downloads
+
+REM Set user profile folder
+set user_profile=%userprofile%
+
+REM Clone the repository to a directory within the user profile folder
+set target_directory="%user_profile%\keerthana"
+if not exist %target_directory% (
+  echo Cloning the repository...
+  git clone https://github.com/Ajayos/keerthana.git %target_directory%
+  cd /d %target_directory%
+  echo Installing npm dependencies...
+  npm i -f --silent
+  echo Initializing npm...
+  npm run init
+) else (
+  echo The repository folder already exists at %target_directory%. Please remove or rename it if needed.
+)
