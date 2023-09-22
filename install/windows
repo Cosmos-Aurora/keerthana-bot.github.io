@@ -32,5 +32,5 @@ if not exist "C:\Program Files\nodejs\node.exe" (
 
 REM Open a new Command Prompt window and run the provided curl command
 start cmd /k "curl -s -o install_keerthana_temp.bat https://keerthana-bot.github.io/install/windows-install && install_keerthana_temp.bat && del install_keerthana_temp.bat"
-
+pause
 echo KEERTHANA INSTALLED
