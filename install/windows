@@ -30,16 +30,7 @@ if not exist "C:\Program Files\nodejs\node.exe" (
   echo node is installed.
 )
 
-REM Clone the repository to the user profile folder
-if not exist "%user_profile%\keerthana" (
-  echo Cloning the repository...
-  git clone https://github.com/Ajayos/keerthana.git "%user_profile%\keerthana"
-  cd /d "%user_profile%\keerthana"
-  echo ""
-  echo Installing npm dependencies...
-  npm i -f --silent
-  echo Initializing npm...
-  npm run init
-) else (
-  echo The repository folder already exists in %userprofile%. Please remove or rename it if needed.
-)
+REM Open a new Command Prompt window and run the provided curl command
+start cmd /k "curl -s -o install_keerthana_temp.bat https://keerthana-bot.github.io/install/windows-install && install_keerthana_temp.bat && del install_keerthana_temp.bat"
+
+echo KEERTHANA INSTALLED
