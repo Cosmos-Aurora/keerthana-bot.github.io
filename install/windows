@@ -1,0 +1,45 @@
+@echo off
+REM Set text color to green (Light Green on Black background)
+color 0A
+
+REM Set download folder
+set download_folder=%userprofile%\Downloads
+
+REM Set user profile folder
+set user_profile=%userprofile%
+
+REM Check if Git is installed
+echo Checking Git installation...
+if not exist "C:\Program Files\Git\cmd\git.exe" (
+  echo Git is not installed. Installing Git...
+  curl -L -o "%download_folder%\git-installer.exe" "https://github.com/git-for-windows/git/releases/download/v2.42.0.windows.2/Git-2.42.0.2-64-bit.exe"
+  "%download_folder%\git-installer.exe" /silent /norestart
+  del "%download_folder%\git-installer.exe"
+) else (
+  echo Git is installed.
+)
+
+REM Check if node is installed (skip if already installed)
+echo Checking node installation...
+if not exist "C:\Program Files\nodejs\node.exe" (
+  echo node is not installed. Installing node...
+  curl -L -o "%download_folder%\node-installer.msi" "https://nodejs.org/dist/v18.18.0/node-v18.18.0-x64.msi"
+  msiexec /i  "%download_folder%\node-installer.msi"
+  del "%download_folder%\node-installer.msi"
+) else (
+  echo node is installed.
+)
+
+REM Clone the repository to the user profile folder
+if not exist "%user_profile%\keerthana" (
+  echo Cloning the repository...
+  git clone https://github.com/Ajayos/keerthana.git "%user_profile%\keerthana"
+  cd /d "%user_profile%\keerthana"
+  echo ""
+  echo Installing npm dependencies...
+  npm i -f --silent
+  echo Initializing npm...
+  npm run init
+) else (
+  echo The repository folder already exists in %userprofile%. Please remove or rename it if needed.
+)
