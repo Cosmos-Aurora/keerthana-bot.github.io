@@ -21,3 +21,6 @@ if not exist %target_directory% (
 ) else (
   echo The repository folder already exists at %target_directory%. Please remove or rename it if needed.
 )
+
+pause 
+exit
