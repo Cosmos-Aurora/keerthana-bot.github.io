@@ -12,7 +12,7 @@ REM Clone the repository to a directory within the user profile folder
 set target_directory="%user_profile%\keerthana"
 if not exist %target_directory% (
   echo Cloning the repository...
-  git clone https://github.com/Ajayos/keerthana.git %target_directory%
+  git clone https://github.com/keerthana-bot/install.git %target_directory%
   cd /d %target_directory%
   echo Installing npm dependencies...
   npm i -f --silent
