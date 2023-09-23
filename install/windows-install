@@ -16,8 +16,6 @@ if not exist %target_directory% (
   cd /d %target_directory%
   echo Installing npm dependencies...
   npm i -f --silent
-  echo Initializing npm...
-  npm run init
 ) else (
   echo The repository folder already exists at %target_directory%. Please remove or rename it if needed.
 )
