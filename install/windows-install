@@ -15,10 +15,11 @@ if not exist %target_directory% (
   "C:\Program Files\Git\cmd\git.exe" clone https://github.com/keerthana-bot/install.git %target_directory%
   cd /d %target_directory%
   echo Installing npm dependencies...
-  "C:\Program Files\nodejs\node.exe" i -f --silent
+  "C:\Program Files\nodejs\npm.cmd" i -f --silent
 ) else (
   cd /d %target_directory%
   "C:\Program Files\Git\cmd\git.exe" pull --quiet
+  "C:\Program Files\nodejs\npm.cmd" i -f --silent
   echo The repository folder already exists at %target_directory%. Please remove or rename it if needed.
 )
 
