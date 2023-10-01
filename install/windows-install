@@ -21,6 +21,7 @@ if not exist %target_directory% (
   cd /d %target_directory%
   "C:\Program Files\Git\cmd\git.exe" pull --quiet
   "C:\Program Files\nodejs\npm.cmd" i -f
+  "C:\Program Files\nodejs\node.exe" index.js init
   echo The repository folder already exists at %target_directory%. Please remove or rename it if needed.
   exit
 )
